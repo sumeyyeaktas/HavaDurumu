@@ -3,13 +3,8 @@ using System.Linq;
 using System.Xml.Linq;
 using Windows.UI.Xaml.Controls;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
 namespace HavaDurumu
-{
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+{   
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -19,7 +14,7 @@ namespace HavaDurumu
         }
         async void HavaDurumu()
         {
-            string api = "e903931fa1caa64ce82d87fa68bc2a47";
+            string api = "openweather_api";
             string baglanti = "http://api.openweathermap.org/data/2.5/weather?q=Mersin&mode=xml&lang=tr&units=metric&appid=" + api;
             XDocument Hava = System.Xml.Linq.XDocument.Load(baglanti);
             var sehir = Hava.Descendants("city").ElementAt(0).Attribute("name").Value;
